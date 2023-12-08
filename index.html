@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Interest Calculator</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+ 
+<div class="homepage-compound-interest-calculator bg-ecru" style="">
+      <div class="calculator-content-container" style="">
+        <script src="https://sqy7rm.media.zestyio.com/jquery-ui.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+
+
+
+
+<div id="learn-hub-calculator" class="compound-interest-calculator" style="">
+  <div class="compound-interest-content-wrapper content-wrapper general-envoy-component" style="">
+    <div class="header-wrapper">
+      <div class="calculator-tagline envoy-tagline solid-slate">
+        
+          
+            CALCULATE YOUR ESTIMATE
+          
+        
+      </div>
+      <h1 class="calculator-headline envoy-header-2 solid-slate">
+        
+          
+            See your potential
+          
+        
+      </h1>
+      <div class="calculator-subheadline envoy-body solid-slate">
+        
+          
+            Check out our compound interest calculator to see just how much the power of time and compound interest can help your money grow.
+          
+        
+      </div>
+
+      
+
+    </div>
+    <div class="main-content-wrapper" style="">
+      <div class="calculator-sidebar-section">
+        <div class="sidebar-segment">
+          <label class="initial-deposit-label calculator-label envoy-tagline" for="initial-deposit">
+            Initial deposit
+          </label>
+          <div class="initial-deposit-wrapper calculator-input-wrapper">
+            <input id="initial-deposit" class="currency-input number-input" type="text" placeholder="100" maxlength="10" oninput="this.value = this.value.slice(0, this.maxLength)" min="0" pattern="[\d,]*" required="">
+            <span class="initial-deposit-prefix currency-prefix">$</span>
+          </div>
+        </div>
+        <div class="sidebar-segment">
+          <label class="contributions-label calculator-label envoy-tagline" for="contributions">
+            Contributions
+          </label>
+          <div class="contributions-wrapper calculator-input-wrapper">
+            <input id="contributions" class="currency-input number-input" type="text" placeholder="20" maxlength="6" oninput="this.value = this.value.slice(0, this.maxLength)" min="0" pattern="[\d,]*" required="">
+            <span class="contributions-prefix currency-prefix">$</span>
+          </div>
+          <div class="frequency-wrapper radio-input-wrapper">
+            <div class="radio-option-wrapper">
+              <input type="radio" id="annual" class="contribution-frequency" name="contribution-frequency" value="annual">
+              <label for="annual">Annual</label>
+            </div>
+            <div class="radio-option-wrapper">
+              <input type="radio" id="monthly" class="contribution-frequency" name="contribution-frequency" value="monthly">
+              <label for="monthly">Monthly</label>
+            </div>
+            <div class="radio-option-wrapper">
+              <input type="radio" id="weekly" class="contribution-frequency" name="contribution-frequency" value="weekly" checked="">
+              <label for="weekly">Weekly</label>
+            </div>
+            <div class="radio-option-wrapper">
+              <input type="radio" id="daily" class="contribution-frequency" name="contribution-frequency" value="daily">
+              <label for="daily">Daily</label>
+            </div>
+          </div>
+        </div>
+        <div class="years-to-grow-segment sidebar-segment">
+          <label class="years-to-grow-label calculator-label envoy-tagline" for="years-to-grow">
+            Years to grow
+          </label>
+          <div class="years-to-grow-wrapper calculator-input-wrapper">
+            <input id="years-to-grow" class="percentage-input number-input" type="number" placeholder="20" style="width: 2ch;" readonly="">
+            <span class="years-to-grow-suffix text-suffix">&nbsp;years</span>
+          </div>
+          <div class="years-to-grow-slider-wrapper">
+            <div class="years-to-grow-slider">
+              <div class="slider-progress bg-acorns-green" style="width: calc((20 / 50) * 100%);"></div>
+            </div>
+            <div class="years-to-grow-draggable-expanded-area">
+              <div class="years-to-grow-icon-wrapper ui-draggable ui-draggable-handle">
+                <img class="years-to-grow-icon" src="https://sqy7rm.media.zestyio.com/Learn-Hub-Grow-Calculator-Icon.png" alt="Image of Acorn">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-segment">
+          <label class="annual-return-label calculator-label envoy-tagline" for="annual-return">
+            Average annual return
+          </label>
+          <div class="annual-return-wrapper calculator-input-wrapper">
+            <input id="annual-return" class="percentage-input number-input" type="number" placeholder="6" oninput="this.value = this.value.slice(0, this.maxLength); this.style.width = this.value.length + 'ch';" style="width: 0ch;" maxlength="2" min="0" pattern="\d*" required="">
+            <span class="annual-return-suffix percentage-suffix">%</span>
+          </div>
+        </div>
+        <button id="calculator-submit" class="a5-cta" type="submit">
+          Calculate my estimate
+        </button>
+      </div>
+      <div class="calculator-chart-section" style="">
+        <div class="chart-heading">
+          <label class="future-balance-label calculator-label envoy-tagline" for="future-balance">
+            Potential Future Balance:
+          </label>
+          <div class="future-balance-wrapper acorns-green">$40,507</div>
+        </div>
+        <div class="chart-container" style="">
+          <div class="chart-wrapper" style="">
+            <div id="calculator-chart" data-highcharts-chart="0" style=""><div id="highcharts-icl89n1-0" dir="ltr" class="highcharts-container "><svg version="1.1" class="highcharts-root" xmlns="http://www.w3.org/2000/svg" width="329" height="400" viewBox="0 0 329 400" role="img" aria-label=""><desc>Created with Highcharts 11.2.0</desc><defs><clipPath id="highcharts-icl89n1-1-"><rect x="1" y="0" width="264" height="316"></rect></clipPath><filter id="highcharts-drop-shadow-0"><feDropShadow dx="1" dy="1" flood-color="#000000" flood-opacity="0.75" stdDeviation="2.5"></feDropShadow></filter><clipPath id="highcharts-icl89n1-23-"><rect x="1" y="0" width="264" height="316"></rect></clipPath></defs><rect class="highcharts-background" x="0.5" y="0.5" width="327" height="398" rx="0" ry="0"></rect><rect class="highcharts-plot-background" x="64" y="58" width="265" height="317"></rect><rect class="highcharts-plot-border" data-z-index="1" x="63.5" y="57.5" width="266" height="318"></rect><g class="highcharts-grid highcharts-xaxis-grid" data-z-index="1"><path data-z-index="1" class="highcharts-grid-line" d="M 69.5 58 L 69.5 375" opacity="1"></path><path data-z-index="1" class="highcharts-grid-line" d="M 132.5 58 L 132.5 375" opacity="1"></path><path data-z-index="1" class="highcharts-grid-line" d="M 196.5 58 L 196.5 375" opacity="1"></path><path data-z-index="1" class="highcharts-grid-line" d="M 259.5 58 L 259.5 375" opacity="1"></path><path data-z-index="1" class="highcharts-grid-line" d="M 322.5 58 L 322.5 375" opacity="1"></path></g><g class="highcharts-grid highcharts-yaxis-grid" data-z-index="1"><path data-z-index="1" class="highcharts-grid-line" d="M 64 375 L 329 375" opacity="1"></path><path data-z-index="1" class="highcharts-grid-line" d="M 64 296 L 329 296" opacity="1"></path><path data-z-index="1" class="highcharts-grid-line" d="M 64 217 L 329 217" opacity="1"></path><path data-z-index="1" class="highcharts-grid-line" d="M 64 137 L 329 137" opacity="1"></path><path data-z-index="1" class="highcharts-grid-line" d="M 64 58 L 329 58" opacity="1"></path></g><g class="highcharts-axis highcharts-xaxis" data-z-index="2"><path class="highcharts-axis-line" d="M 64 375 L 329 375"></path></g><g class="highcharts-axis highcharts-yaxis" data-z-index="2"><path class="highcharts-axis-line" d="M 64 58 L 64 375"></path></g><g class="highcharts-series-group" data-z-index="3" filter="none"><g class="highcharts-series highcharts-series-0 highcharts-column-series highcharts-color-0 highcharts-tracker" data-z-index="0.1" transform="translate(64,58) scale(1 1)" clip-path="url(#highcharts-icl89n1-23-)"><path d="M 4.5 316.5 L 7.5 316.5 A 3 3 0 0 1 7.5 316.5 L 7.5 316.5 A 0 0 0 0 1 7.5 316.5 L 7.5 316.5 A 0 0 0 0 1 4.5 316.5 L 4.5 316.5 A 3 3 0 0 1 4.5 316.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 17.5 309.5 L 20.5 309.5 A 3 3 0 0 1 20.5 309.5 L 20.5 309.5 A 0 0 0 0 1 20.5 309.5 L 20.5 309.5 A 0 0 0 0 1 17.5 309.5 L 17.5 309.5 A 3 3 0 0 1 17.5 309.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 30.5 302.5 L 33.5 302.5 A 3 3 0 0 1 35.736067977499786 303.5 L 35.736067977499786 303.5 A 0 0 0 0 1 35.736067977499786 303.5 L 35.736067977499786 303.5 A 0 0 0 0 1 28.26393202250021 303.5 L 28.26393202250021 303.5 A 3 3 0 0 1 30.5 302.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 42.5 294.5 L 45.5 294.5 A 3 3 0 0 1 48.32842712474619 296.5 L 48.32842712474619 296.5 A 0 0 0 0 1 48.32842712474619 296.5 L 48.32842712474619 296.5 A 0 0 0 0 1 39.67157287525381 296.5 L 39.67157287525381 296.5 A 3 3 0 0 1 42.5 294.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 55.5 285.5 L 58.5 285.5 A 3 3 0 0 1 61.5 288.5 L 61.5 289.5 A 0 0 0 0 1 61.5 289.5 L 52.5 289.5 A 0 0 0 0 1 52.5 289.5 L 52.5 288.5 A 3 3 0 0 1 55.5 285.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 67.5 276.5 L 70.5 276.5 A 3 3 0 0 1 73.5 279.5 L 73.5 282.5 A 0 0 0 0 1 73.5 282.5 L 64.5 282.5 A 0 0 0 0 1 64.5 282.5 L 64.5 279.5 A 3 3 0 0 1 67.5 276.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 80.5 266.5 L 83.5 266.5 A 3 3 0 0 1 86.5 269.5 L 86.5 275.5 A 0 0 0 0 1 86.5 275.5 L 77.5 275.5 A 0 0 0 0 1 77.5 275.5 L 77.5 269.5 A 3 3 0 0 1 80.5 266.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 93.5 256.5 L 96.5 256.5 A 3 3 0 0 1 99.5 259.5 L 99.5 268.5 A 0 0 0 0 1 99.5 268.5 L 90.5 268.5 A 0 0 0 0 1 90.5 268.5 L 90.5 259.5 A 3 3 0 0 1 93.5 256.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 105.5 245.5 L 108.5 245.5 A 3 3 0 0 1 111.5 248.5 L 111.5 261.5 A 0 0 0 0 1 111.5 261.5 L 102.5 261.5 A 0 0 0 0 1 102.5 261.5 L 102.5 248.5 A 3 3 0 0 1 105.5 245.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 118.5 234.5 L 121.5 234.5 A 3 3 0 0 1 124.5 237.5 L 124.5 255.5 A 0 0 0 0 1 124.5 255.5 L 115.5 255.5 A 0 0 0 0 1 115.5 255.5 L 115.5 237.5 A 3 3 0 0 1 118.5 234.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 130.5 222.5 L 133.5 222.5 A 3 3 0 0 1 136.5 225.5 L 136.5 248.5 A 0 0 0 0 1 136.5 248.5 L 127.5 248.5 A 0 0 0 0 1 127.5 248.5 L 127.5 225.5 A 3 3 0 0 1 130.5 222.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 143.5 209.5 L 146.5 209.5 A 3 3 0 0 1 149.5 212.5 L 149.5 241.5 A 0 0 0 0 1 149.5 241.5 L 140.5 241.5 A 0 0 0 0 1 140.5 241.5 L 140.5 212.5 A 3 3 0 0 1 143.5 209.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 156.5 195.5 L 159.5 195.5 A 3 3 0 0 1 162.5 198.5 L 162.5 234.5 A 0 0 0 0 1 162.5 234.5 L 153.5 234.5 A 0 0 0 0 1 153.5 234.5 L 153.5 198.5 A 3 3 0 0 1 156.5 195.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 168.5 180.5 L 171.5 180.5 A 3 3 0 0 1 174.5 183.5 L 174.5 227.5 A 0 0 0 0 1 174.5 227.5 L 165.5 227.5 A 0 0 0 0 1 165.5 227.5 L 165.5 183.5 A 3 3 0 0 1 168.5 180.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 181.5 165.5 L 184.5 165.5 A 3 3 0 0 1 187.5 168.5 L 187.5 220.5 A 0 0 0 0 1 187.5 220.5 L 178.5 220.5 A 0 0 0 0 1 178.5 220.5 L 178.5 168.5 A 3 3 0 0 1 181.5 165.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 194.5 148.5 L 197.5 148.5 A 3 3 0 0 1 200.5 151.5 L 200.5 213.5 A 0 0 0 0 1 200.5 213.5 L 191.5 213.5 A 0 0 0 0 1 191.5 213.5 L 191.5 151.5 A 3 3 0 0 1 194.5 148.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 206.5 131.5 L 209.5 131.5 A 3 3 0 0 1 212.5 134.5 L 212.5 206.5 A 0 0 0 0 1 212.5 206.5 L 203.5 206.5 A 0 0 0 0 1 203.5 206.5 L 203.5 134.5 A 3 3 0 0 1 206.5 131.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 219.5 112.5 L 222.5 112.5 A 3 3 0 0 1 225.5 115.5 L 225.5 200.5 A 0 0 0 0 1 225.5 200.5 L 216.5 200.5 A 0 0 0 0 1 216.5 200.5 L 216.5 115.5 A 3 3 0 0 1 219.5 112.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 231.5 93.5 L 234.5 93.5 A 3 3 0 0 1 237.5 96.5 L 237.5 193.5 A 0 0 0 0 1 237.5 193.5 L 228.5 193.5 A 0 0 0 0 1 228.5 193.5 L 228.5 96.5 A 3 3 0 0 1 231.5 93.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 244.5 72.5 L 247.5 72.5 A 3 3 0 0 1 250.5 75.5 L 250.5 186.5 A 0 0 0 0 1 250.5 186.5 L 241.5 186.5 A 0 0 0 0 1 241.5 186.5 L 241.5 75.5 A 3 3 0 0 1 244.5 72.5 Z" class="highcharts-point highcharts-color-0"></path><path d="M 257.5 49.5 L 260.5 49.5 A 3 3 0 0 1 263.5 52.5 L 263.5 179.5 A 0 0 0 0 1 263.5 179.5 L 254.5 179.5 A 0 0 0 0 1 254.5 179.5 L 254.5 52.5 A 3 3 0 0 1 257.5 49.5 Z" class="highcharts-point highcharts-color-0"></path></g><g class="highcharts-markers highcharts-series-0 highcharts-column-series highcharts-color-0" data-z-index="0.1" transform="translate(64,58) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-1 highcharts-column-series highcharts-color-1 highcharts-tracker" data-z-index="0.1" transform="translate(64,58) scale(1 1)" clip-path="url(#highcharts-icl89n1-23-)"><path d="M 4.5 316.5 L 7.5 316.5 A 3 3 0 0 1 9.73606797749979 317.5 L 9.73606797749979 317.5 A 0 0 0 0 1 9.73606797749979 317.5 L 9.73606797749979 317.5 A 0 0 0 0 1 2.26393202250021 317.5 L 2.26393202250021 317.5 A 3 3 0 0 1 4.5 316.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 17.5 309.5 L 20.5 309.5 A 3 3 0 0 1 23.5 312.5 L 23.5 317.5 A 0 0 0 0 1 23.5 317.5 L 14.5 317.5 A 0 0 0 0 1 14.5 317.5 L 14.5 312.5 A 3 3 0 0 1 17.5 309.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 28.26393202250021 303.5 L 35.736067977499786 303.5 A 3 3 0 0 1 36.5 305.5 L 36.5 317.5 A 0 0 0 0 1 36.5 317.5 L 27.5 317.5 A 0 0 0 0 1 27.5 317.5 L 27.5 305.5 A 3 3 0 0 1 28.26393202250021 303.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 39.67157287525381 296.5 L 48.32842712474619 296.5 A 3 3 0 0 1 48.5 297.5 L 48.5 317.5 A 0 0 0 0 1 48.5 317.5 L 39.5 317.5 A 0 0 0 0 1 39.5 317.5 L 39.5 297.5 A 3 3 0 0 1 39.67157287525381 296.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 52.5 289.5 L 61.5 289.5 A 0 0 0 0 1 61.5 289.5 L 61.5 317.5 A 0 0 0 0 1 61.5 317.5 L 52.5 317.5 A 0 0 0 0 1 52.5 317.5 L 52.5 289.5 A 0 0 0 0 1 52.5 289.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 64.5 282.5 L 73.5 282.5 A 0 0 0 0 1 73.5 282.5 L 73.5 317.5 A 0 0 0 0 1 73.5 317.5 L 64.5 317.5 A 0 0 0 0 1 64.5 317.5 L 64.5 282.5 A 0 0 0 0 1 64.5 282.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 77.5 275.5 L 86.5 275.5 A 0 0 0 0 1 86.5 275.5 L 86.5 317.5 A 0 0 0 0 1 86.5 317.5 L 77.5 317.5 A 0 0 0 0 1 77.5 317.5 L 77.5 275.5 A 0 0 0 0 1 77.5 275.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 90.5 268.5 L 99.5 268.5 A 0 0 0 0 1 99.5 268.5 L 99.5 317.5 A 0 0 0 0 1 99.5 317.5 L 90.5 317.5 A 0 0 0 0 1 90.5 317.5 L 90.5 268.5 A 0 0 0 0 1 90.5 268.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 102.5 261.5 L 111.5 261.5 A 0 0 0 0 1 111.5 261.5 L 111.5 317.5 A 0 0 0 0 1 111.5 317.5 L 102.5 317.5 A 0 0 0 0 1 102.5 317.5 L 102.5 261.5 A 0 0 0 0 1 102.5 261.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 115.5 255.5 L 124.5 255.5 A 0 0 0 0 1 124.5 255.5 L 124.5 317.5 A 0 0 0 0 1 124.5 317.5 L 115.5 317.5 A 0 0 0 0 1 115.5 317.5 L 115.5 255.5 A 0 0 0 0 1 115.5 255.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 127.5 248.5 L 136.5 248.5 A 0 0 0 0 1 136.5 248.5 L 136.5 317.5 A 0 0 0 0 1 136.5 317.5 L 127.5 317.5 A 0 0 0 0 1 127.5 317.5 L 127.5 248.5 A 0 0 0 0 1 127.5 248.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 140.5 241.5 L 149.5 241.5 A 0 0 0 0 1 149.5 241.5 L 149.5 317.5 A 0 0 0 0 1 149.5 317.5 L 140.5 317.5 A 0 0 0 0 1 140.5 317.5 L 140.5 241.5 A 0 0 0 0 1 140.5 241.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 153.5 234.5 L 162.5 234.5 A 0 0 0 0 1 162.5 234.5 L 162.5 317.5 A 0 0 0 0 1 162.5 317.5 L 153.5 317.5 A 0 0 0 0 1 153.5 317.5 L 153.5 234.5 A 0 0 0 0 1 153.5 234.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 165.5 227.5 L 174.5 227.5 A 0 0 0 0 1 174.5 227.5 L 174.5 317.5 A 0 0 0 0 1 174.5 317.5 L 165.5 317.5 A 0 0 0 0 1 165.5 317.5 L 165.5 227.5 A 0 0 0 0 1 165.5 227.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 178.5 220.5 L 187.5 220.5 A 0 0 0 0 1 187.5 220.5 L 187.5 317.5 A 0 0 0 0 1 187.5 317.5 L 178.5 317.5 A 0 0 0 0 1 178.5 317.5 L 178.5 220.5 A 0 0 0 0 1 178.5 220.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 191.5 213.5 L 200.5 213.5 A 0 0 0 0 1 200.5 213.5 L 200.5 317.5 A 0 0 0 0 1 200.5 317.5 L 191.5 317.5 A 0 0 0 0 1 191.5 317.5 L 191.5 213.5 A 0 0 0 0 1 191.5 213.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 203.5 206.5 L 212.5 206.5 A 0 0 0 0 1 212.5 206.5 L 212.5 317.5 A 0 0 0 0 1 212.5 317.5 L 203.5 317.5 A 0 0 0 0 1 203.5 317.5 L 203.5 206.5 A 0 0 0 0 1 203.5 206.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 216.5 200.5 L 225.5 200.5 A 0 0 0 0 1 225.5 200.5 L 225.5 317.5 A 0 0 0 0 1 225.5 317.5 L 216.5 317.5 A 0 0 0 0 1 216.5 317.5 L 216.5 200.5 A 0 0 0 0 1 216.5 200.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 228.5 193.5 L 237.5 193.5 A 0 0 0 0 1 237.5 193.5 L 237.5 317.5 A 0 0 0 0 1 237.5 317.5 L 228.5 317.5 A 0 0 0 0 1 228.5 317.5 L 228.5 193.5 A 0 0 0 0 1 228.5 193.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 241.5 186.5 L 250.5 186.5 A 0 0 0 0 1 250.5 186.5 L 250.5 317.5 A 0 0 0 0 1 250.5 317.5 L 241.5 317.5 A 0 0 0 0 1 241.5 317.5 L 241.5 186.5 A 0 0 0 0 1 241.5 186.5 Z" class="highcharts-point highcharts-color-1"></path><path d="M 254.5 179.5 L 263.5 179.5 A 0 0 0 0 1 263.5 179.5 L 263.5 317.5 A 0 0 0 0 1 263.5 317.5 L 254.5 317.5 A 0 0 0 0 1 254.5 317.5 L 254.5 179.5 A 0 0 0 0 1 254.5 179.5 Z" class="highcharts-point highcharts-color-1"></path></g><g class="highcharts-markers highcharts-series-1 highcharts-column-series highcharts-color-1" data-z-index="0.1" transform="translate(64,58) scale(1 1)" clip-path="none"></g></g><text x="165" text-anchor="middle" class="highcharts-title" data-z-index="4" y="21"></text><text x="165" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" y="26"></text><text x="0" text-anchor="start" class="highcharts-caption" data-z-index="4" y="414"></text><g class="highcharts-legend highcharts-no-tooltip" data-z-index="7" transform="translate(51,10)"><rect class="highcharts-legend-box" rx="0" ry="0" x="0.5" y="0.5" width="226" height="31"></rect><g data-z-index="1"><g><g class="highcharts-legend-item highcharts-column-series highcharts-color-1 highcharts-series-1" data-z-index="1" transform="translate(8,3)"><text x="32" text-anchor="start" data-z-index="2" y="19">Investment</text><rect x="1" y="6" rx="7" ry="7" width="14" height="14" class="highcharts-point" data-z-index="3"></rect></g><g class="highcharts-legend-item highcharts-column-series highcharts-color-0 highcharts-series-0" data-z-index="1" transform="translate(144.26729583740234,3)"><text x="32" y="19" text-anchor="start" data-z-index="2">Return</text><rect x="1" y="6" rx="7" ry="7" width="14" height="14" class="highcharts-point" data-z-index="3"></rect></g></g></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels" data-z-index="7"><text x="70.309523809524" text-anchor="middle" transform="translate(0,0)" y="397" opacity="1">2023</text><text x="133.40476190476" text-anchor="middle" transform="translate(0,0)" y="397" opacity="1">2028</text><text x="196.5" text-anchor="middle" transform="translate(0,0)" y="397" opacity="1">2033</text><text x="259.59523809523" text-anchor="middle" transform="translate(0,0)" y="397" opacity="1">2038</text><text x="312.7552070617676" text-anchor="middle" transform="translate(0,0)" y="397" opacity="1">2043</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" data-z-index="7"><text x="52" text-anchor="end" transform="translate(0,0)" y="381" opacity="1">$0</text><text x="52" text-anchor="end" transform="translate(0,0)" y="301" opacity="1">$12,000</text><text x="52" text-anchor="end" transform="translate(0,0)" y="222" opacity="1">$24,000</text><text x="52" text-anchor="end" transform="translate(0,0)" y="143" opacity="1">$36,000</text><text x="52" text-anchor="end" transform="translate(0,0)" y="64" opacity="1">$48,000</text></g><g class="highcharts-label highcharts-tooltip highcharts-color-0" data-z-index="8" filter="none" transform="translate(155,72)" opacity="0" visibility="hidden"><path class="highcharts-label-box highcharts-tooltip-box" d="M 3 0 L 159 0 A 3 3 0 0 1 162 3 L 162 68 A 3 3 0 0 1 159 71 L 3 71 A 3 3 0 0 1 0 68 L 0 3 A 3 3 0 0 1 3 0 Z"></path><text x="10" data-z-index="1" y="24"><tspan class="highcharts-header">2043</tspan><tspan class="highcharts-br" dy="17" x="10">​</tspan><tspan class="highcharts-color-0  ">●</tspan> Return: <tspan class="highcharts-strong">$19,607</tspan><tspan class="highcharts-br" dy="17" x="10">​</tspan><tspan class="highcharts-color-1  ">●</tspan> Investment: <tspan class="highcharts-strong">$20,900</tspan><tspan class="highcharts-br">​</tspan></text></g></svg></div></div>
+          </div>
+        </div>
+
+        
+
+          <div class="social-share-module-container">
+  <div class="social-share-module-wrapper">
+    <div class="social-share-module">
+      <div class="social-share-toggle bg-white">
+        <div class="toggle-icon-wrapper">
+          <img class="toggle-icon hide-on-copied-state" src="https://sqy7rm.media.zestyio.com/Share-Module-Share.svg" alt="Share icon">
+          <img class="toggle-icon show-on-copied-state" src="https://sqy7rm.media.zestyio.com/Share-Copied-Checkmark.svg" alt="Checkmark icon">
+        </div>
+        <div class="toggle-copy acorns-green">
+          <span class="hide-on-copied-state">
+            Share
+          </span>
+          <span class="show-on-copied-state">
+            Copied!
+          </span>
+        </div>
+      </div>
+      <div class="social-share-dropdown-wrapper bg-white">
+        <div class="dropdown-upward-carat-wrapper">
+          <img class="dropdown-upward-carat" src="https://sqy7rm.media.zestyio.com/Share-Module-Pointer.svg" alt="Arrow pointing up">
+        </div>
+        <div class="social-share-dropdown">
+          <div class="dropdown-header">
+            <div class="dropdown-title solid-slate">
+              Share
+            </div>
+          </div>
+          <div class="dropdown-item-row">
+            <div class="social-share-copy-link dropdown-item">
+              <div class="item-icon-wrapper bg-ivory">
+                <img class="item-icon" src="https://sqy7rm.media.zestyio.com/Share-Module-Link.svg" alt="Icon of links in a chain">
+              </div>
+              <div class="item-title solid-slate">
+                Copy link
+              </div>
+            </div>
+            <div class="social-share-twitter dropdown-item">
+              <div class="item-icon-wrapper bg-ivory">
+                <img class="item-icon" src="https://sqy7rm.media.zestyio.com/Share-Module-Twitter.svg" alt="Twitter logo">
+              </div>
+              <div class="item-title solid-slate">
+                Twitter
+              </div>
+            </div>
+            <div class="social-share-facebook dropdown-item">
+              <div class="item-icon-wrapper bg-ivory">
+                <img class="item-icon" src="https://sqy7rm.media.zestyio.com/Share-Module-Facebook.svg" alt="Facebook logo">
+              </div>
+              <div class="item-title solid-slate">
+                Facebook
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-close-wrapper">
+            <img class="dropdown-close" src="https://sqy7rm.media.zestyio.com/Share-Module-Close.svg" alt="Close button">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+ 
+
+        
+
+        <div class="chart-disclosures light-grey">
+          <p>The chart shows an estimate of how much an investment could grow over time based on the initial deposit, contribution schedule, time horizon, and interest rate specified. &nbsp;Changes in those variables can affect the outcome. &nbsp;Reset the calculator using different figures to show different scenarios. &nbsp;Results do not predict the investment performance of any Acorns portfolio and do not take into consideration economic or market factors which can impact performance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Script -->
+    <script src="main.js"></script>
+  </body>
+</html>
